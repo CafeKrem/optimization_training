@@ -1,0 +1,21 @@
+# Doxyfile
+
+# Project related configurations
+PROJECT_NAME           = "optimization training"
+OUTPUT_DIRECTORY       = ./doxygen  # Outputs to docs/doxygen/
+
+# Build configurations
+GENERATE_XML           = YES
+XML_OUTPUT             = xml
+
+# Source code settings
+INPUT                  = ../src ../include
+RECURSIVE              = YES
+
+# Optional: Exclude patterns
+# EXCLUDE_PATTERNS       = */tests/*
+
+# Disable generating HTML if not needed
+GENERATE_HTML          = NO
+
+# Other settings as needed
