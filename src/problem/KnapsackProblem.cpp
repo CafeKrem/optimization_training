@@ -22,12 +22,20 @@ namespace Problem {
         return maxWeight;
     }
 
-    float Problem::KnapsackProblem::evaluateObjectiveFunction(const std::vector<int> &solution) {
+    float Problem::KnapsackProblem::evaluateObjectiveFunction(const std::vector<bool> &solution) {
         float objectiveValue = 0.0;
         for (int i = 0; i < solution.size(); i++) {
             objectiveValue += solution[i] * values[i];
         }
         return objectiveValue;
+    }
+
+    bool Problem::KnapsackProblem::isAcceptableSolution(const std::vector<bool> &solution) {
+        float totalWeight = 0.0;
+        for (int i = 0; i < solution.size(); i++) {
+            totalWeight += solution[i] * weights[i];
+        }
+        return totalWeight <= maxWeight;
     }
     // problem
 }

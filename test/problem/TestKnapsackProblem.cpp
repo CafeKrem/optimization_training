@@ -43,11 +43,17 @@ namespace ProblemTest {
 
 
     TEST_F(KnapsackProblemTest, EvaluateObjectiveFunction) {
-        std::vector<int> solution = {1, 0, 1};
+        std::vector<bool> solution = {1, 0, 1};
         float objectiveValue = knapsackProblem->evaluateObjectiveFunction(solution);
         ASSERT_EQ(objectiveValue, 40.0);
     }
 
+    TEST_F(KnapsackProblemTest, IsAcceptableSolution) {
+        std::vector<bool> solution = {true, false, true};
+        ASSERT_TRUE(knapsackProblem->isAcceptableSolution(solution));
+        std::vector<bool> solution2 = {true, true, true};
+        ASSERT_FALSE(knapsackProblem->isAcceptableSolution(solution2));
+    }
 
 
 // Add more test cases as needed

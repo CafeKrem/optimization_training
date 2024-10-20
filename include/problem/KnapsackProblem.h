@@ -15,7 +15,8 @@ namespace Problem {
             std::vector<float> getWeights();
             std::vector<float> getValues();
             float getMaxWeight() const;
-            float evaluateObjectiveFunction(const std::vector<int> &solution);
+            float evaluateObjectiveFunction(const std::vector<bool> &solution);
+            bool isAcceptableSolution(const std::vector<bool> &solution);
         protected:
             const std::vector<float> weights;
             const std::vector<float> values;
