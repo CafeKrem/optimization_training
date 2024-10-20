@@ -39,6 +39,13 @@ namespace ProblemTest {
         ASSERT_EQ(knapsackProblem->getValues(),values);
     }
 
+
+    TEST_F(KnapsackProblemTest, EvaluateObjectiveFunction) {
+        std::vector<int> solution = {1, 0, 1};
+        float objectiveValue = knapsackProblem->evaluateObjectiveFunction(solution);
+        ASSERT_EQ(objectiveValue, 40.0);
+    }
+
 // Add more test cases as needed
 // Example: checking if the weights and values are stored correctly
 TEST_F(KnapsackProblemTest, CheckWeightsAndValues) {

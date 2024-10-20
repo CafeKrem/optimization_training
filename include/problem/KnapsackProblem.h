@@ -14,9 +14,11 @@ namespace Problem {
             KnapsackProblem(const std::vector<float> &weights, const std::vector<float> &values);
             std::vector<float> getWeights();
             std::vector<float> getValues();
+            float evaluateObjectiveFunction(const std::vector<int> &solution);
         protected:
             const std::vector<float> weights;
             const std::vector<float> values;
+
     };
 }
 
