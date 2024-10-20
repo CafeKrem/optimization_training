@@ -13,11 +13,12 @@ namespace ProblemTest {
     protected:
         std::vector<float> weights = {1.0, 2.0, 3.0};
         std::vector<float> values = {10.0, 20.0, 30.0};
+        float  maxWeight = 5.0;
         Problem::KnapsackProblem* knapsackProblem{};
 
         // Runs before each test
         void SetUp() override {
-            knapsackProblem = new Problem::KnapsackProblem(weights, values);
+            knapsackProblem = new Problem::KnapsackProblem(weights, values,maxWeight);
         }
 
         // Runs after each test
@@ -37,6 +38,7 @@ namespace ProblemTest {
 
         ASSERT_EQ(knapsackProblem->getWeights(), weights);
         ASSERT_EQ(knapsackProblem->getValues(),values);
+        ASSERT_EQ(knapsackProblem->getMaxWeight(),5.0);
     }
 
 
@@ -45,6 +47,8 @@ namespace ProblemTest {
         float objectiveValue = knapsackProblem->evaluateObjectiveFunction(solution);
         ASSERT_EQ(objectiveValue, 40.0);
     }
+
+
 
 // Add more test cases as needed
 // Example: checking if the weights and values are stored correctly

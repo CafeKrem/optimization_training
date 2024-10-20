@@ -5,24 +5,29 @@
 
 namespace Problem {
 
-        KnapsackProblem::KnapsackProblem(const std::vector<float> &weights, const std::vector<float> &values)
-                : weights(weights), values(values) {
+    KnapsackProblem::KnapsackProblem(const std::vector<float> &weights, const std::vector<float> &values,
+                                     const float maxWeight)
+            : weights(weights), values(values), maxWeight(maxWeight) {}
 
-        }
 
-        std::vector<float> KnapsackProblem::getWeights() {
-            return weights;
-        }
+    std::vector<float> Problem::KnapsackProblem::getWeights() {
+        return weights;
+    }
 
-        std::vector<float> KnapsackProblem::getValues() {
-            return values;
-        }
+    std::vector<float> Problem::KnapsackProblem::getValues() {
+        return values;
+    }
 
-        float KnapsackProblem::evaluateObjectiveFunction(const std::vector<int> &solution) {
-            float objectiveValue = 0.0;
-            for (int i = 0; i < solution.size(); i++) {
-                objectiveValue += solution[i] * values[i];
-            }
-            return objectiveValue;
+    float Problem::KnapsackProblem::getMaxWeight() const {
+        return maxWeight;
+    }
+
+    float Problem::KnapsackProblem::evaluateObjectiveFunction(const std::vector<int> &solution) {
+        float objectiveValue = 0.0;
+        for (int i = 0; i < solution.size(); i++) {
+            objectiveValue += solution[i] * values[i];
         }
-} // problem
+        return objectiveValue;
+    }
+    // problem
+}

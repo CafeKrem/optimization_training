@@ -11,13 +11,15 @@ namespace Problem {
     class KnapsackProblem : public AbstractProblem {
         public:
 
-            KnapsackProblem(const std::vector<float> &weights, const std::vector<float> &values);
+            KnapsackProblem(const std::vector<float> &weights, const std::vector<float> &values,float maxWeight);
             std::vector<float> getWeights();
             std::vector<float> getValues();
+            float getMaxWeight() const;
             float evaluateObjectiveFunction(const std::vector<int> &solution);
         protected:
             const std::vector<float> weights;
             const std::vector<float> values;
+            const float maxWeight;
 
     };
 }
